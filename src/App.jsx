@@ -1,5 +1,5 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import MyTopBar from "./components/MyTopBar";
 import MyFooter from "./components/MyFooter";
 import MyHome from "./components/MyHome";
@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TvShows from "./components/TvShows";
 import MovieDetails from "./components/MovieDetails";
 import ErrorPage from "./components/ErrorPage";
+import MyHeader from "./components/MyHeader";
 
 const App = () => {
   return (
@@ -18,7 +19,6 @@ const App = () => {
         <MyTopBar />
         <Routes>
           <Route path="/" element={<MyHome />} />
-          {/* <Route path="/" element={<Header />} /> */}
 
           <Route path="/TvShows" element={<TvShows />} />
 

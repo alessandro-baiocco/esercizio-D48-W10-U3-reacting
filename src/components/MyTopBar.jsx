@@ -1,15 +1,16 @@
 import { ListGroup, NavItem, NavbarBrand, Dropdown } from "react-bootstrap";
-
 import Navbar from "react-bootstrap/Navbar";
-
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 import logo from "./Netflix-assets/assets/netflix_logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const MyTopBar = () => {
+  const location = useLocation();
+
   return (
-    <Navbar className="d-flex navbar align-content-center" expand="lg" bg="dark">
+    <Navbar className="d-flex navbar align-content-center justify-content-center" expand="lg" bg="dark">
       <NavbarBrand className="ms-2">
         <img src={logo} alt="logo-netflix" height={"40px"} />
       </NavbarBrand>
@@ -37,9 +38,23 @@ const MyTopBar = () => {
         >
           <span className="navbar-toggler-icon bg-secondary"></span>
         </NavbarToggle>
-        <div className="d-flex align-content-center mt-2">
+        <div className="d-flex align-items-center mt-2">
+          <input
+            type="text"
+            className="p-0 text-light fw-bold"
+            style={{ backgroundColor: "#6c757d33", border: "none", maxWidth: "120px" }}
+            placeholder={`${
+              location.pathname.includes("/MovieDetails")
+                ? ""
+                : location.pathname === "/"
+                ? " cerca film"
+                : location.pathname === "/TvShows"
+                ? " cerca serie TV"
+                : " cerca"
+            }`}
+          ></input>
           <i className="bi bi-search mx-2 text-light"></i>
-          <p className="mx-2 text-light text-decoration-none ">kids</p>
+          <p className="mx-2 text-light text-decoration-none my-0">kids</p>
           <i className="bi bi-bell-fill mx-2 text-light"></i>
           <Dropdown>
             <Dropdown.Toggle
