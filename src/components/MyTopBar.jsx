@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 import logo from "./Netflix-assets/assets/netflix_logo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const MyTopBar = () => {
   return (
@@ -15,12 +15,12 @@ const MyTopBar = () => {
       </NavbarBrand>
       <NavbarCollapse className="order-1 order-lg-0" id="navbarNavAltMarkup">
         <ListGroup className="navbar-nav d-flex me-auto navbar-collapse">
-          <Link to={"/"} className={`mx-1 `}>
+          <NavLink to={"/"} className={`mx-1 nav-link`}>
             Home
-          </Link>
-          <Link to={"/TvShows"} className="mx-1 text-light">
+          </NavLink>
+          <NavLink to={"/TvShows"} className="mx-1 nav-link">
             TV Shows
-          </Link>
+          </NavLink>
           <NavItem className="mx-1">Movies</NavItem>
           <NavItem className="mx-1">Recently Added</NavItem>
           <NavItem className="mx-1">My List</NavItem>

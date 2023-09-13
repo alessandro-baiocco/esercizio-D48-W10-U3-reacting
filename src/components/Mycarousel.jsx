@@ -15,7 +15,6 @@ const MyCarousel = (props) => {
   const request = async () => {
     try {
       const request = await fetch(`https://www.omdbapi.com/?apikey=20548f09&s=${props.search}`);
-      console.log(request);
       if (request.ok) {
         const data = await request.json();
         setData(data.Search);
@@ -51,10 +50,12 @@ const MyCarousel = (props) => {
           <Row className="gx-1">
             {data &&
               data.slice(0, 6).map((film, index) => (
-                <Col xs={6} md={4} lg={2} key={`film-${index}`}>
+                <Col xs={6} md={4} lg={2} key={`film-${index}`} style={{ position: "relative" }}>
                   <img src={film.Poster} alt={film.Title} height={"200px"} width={"100%"} />
-                  <Link to={`/MovieDetails/${film.imdbID}`} filmId={film.imdbID}>
-                    <button className="text-light">guarda</button>
+                  <Link to={`/MovieDetails/${film.imdbID}`}>
+                    <button className="text-light" style={{ position: "absolute", left: "3px", bottom: "2px" }}>
+                      guarda
+                    </button>
                   </Link>
                 </Col>
               ))}
@@ -64,10 +65,12 @@ const MyCarousel = (props) => {
           <Row className="gx-1">
             {data &&
               data.slice(4, 11).map((film, index) => (
-                <Col xs={6} md={4} lg={2} key={`film2-${index + 6}`}>
+                <Col xs={6} md={4} lg={2} key={`film2-${index + 6}`} style={{ position: "relative" }}>
                   <img src={film.Poster} alt={film.Title} height={"200px"} width={"100%"} />
                   <Link to={`/MovieDetails/${film.imdbID}`}>
-                    <button className="text-light">guarda</button>
+                    <button className="text-light" style={{ position: "absolute", left: "3px", bottom: "2px" }}>
+                      guarda
+                    </button>
                   </Link>
                 </Col>
               ))}
