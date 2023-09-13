@@ -40,7 +40,7 @@ const MovieDetails = () => {
       )}
 
       {loading && <Spinner animation="grow" variant="info" className="display-5" />}
-      {movie && (
+      {/* {movie && (
         <img
           src={movie.Poster}
           alt={movie.Title}
@@ -49,7 +49,7 @@ const MovieDetails = () => {
           style={{ objectFit: "cover" }}
           className="mb-3"
         />
-      )}
+      )} */}
       {movie && (
         <Container className="d-flex ">
           <Card style={{ maxWidth: "30%" }}>

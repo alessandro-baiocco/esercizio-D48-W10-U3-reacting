@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Alert, Button, Spinner } from "react-bootstrap";
+import { Alert, Button, Container, Spinner } from "react-bootstrap";
 import FormComment from "./FormComment";
 
 const CommentZone = (props) => {
@@ -79,14 +79,14 @@ const CommentZone = (props) => {
       )}
 
       {comment && (
-        <>
+        <Container fluid className="ms-3">
           <h1 className="text-light"> commenti </h1>
           {comment &&
             props.asinId &&
             comment
               .filter((comm) => comm.elementId === props.asinId)
               .map((comm, index) => (
-                <p style={{ border: "solid black 1px" }} key={`comm-${index}`} className="text-light">
+                <p style={{ border: "solid white 2px" }} key={`comm-${index}`} className="text-light ms-2 ps-2">
                   {comm.comment} | {comm.rate} stelle / 5
                   <Button onClick={() => elimina(comm._id)} variant="danger" className="ms-2">
                     <i className="bi bi-trash-fill"></i>
@@ -97,7 +97,7 @@ const CommentZone = (props) => {
             <p>non sono stati trovati commenti</p>
           )}
           <FormComment id={props.asinId} />
-        </>
+        </Container>
       )}
     </span>
   );
