@@ -10,7 +10,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TvShows from "./components/TvShows";
 import MovieDetails from "./components/MovieDetails";
 import ErrorPage from "./components/ErrorPage";
-import MyHeader from "./components/MyHeader";
 
 const App = () => {
   return (

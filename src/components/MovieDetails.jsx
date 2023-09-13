@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Alert, Card, Col, Container, ListGroup, Row, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import CommentZone from "./CommentZone";
+import FormComment from "./FormComment";
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -49,25 +51,48 @@ const MovieDetails = () => {
         />
       )}
       {movie && (
-        <Container className="d-flex justify-content-center">
-          <Row>
-            <Col xs={8} md={9} xl={10}>
-              <Card>
-                <Card.Img src={movie.Poster} variant="top" />
-                <Card.Body>
-                  <Card.Title>{movie.Title}</Card.Title>
-                </Card.Body>
-                <ListGroup className="list-group-flush">
-                  <ListGroup.Item>{movie.Year}</ListGroup.Item>
-                  <ListGroup.Item>{movie.Genre}</ListGroup.Item>
-                </ListGroup>
-                <Card.Body>
-                  <Card.Link variant="success">Guarda</Card.Link>
-                  <Card.Link variant="info">Compra</Card.Link>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
+        <Container className="d-flex ">
+          <Card style={{ maxWidth: "30%" }}>
+            <Card.Body>
+              <Card.Title>{movie.Title}</Card.Title>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroup.Item>
+                <span className="fw-bold">DESCRIPTION</span> <br />
+                {movie.Plot}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <span className="fw-bold">Language : </span> {movie.Language}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <span className="fw-bold">RELEASED ON : </span>
+                {movie.Released}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <span className="fw-bold">DIRECTED BY : </span>
+                {movie.Director}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <span className="fw-bold">WRITED BY : </span>
+                {movie.Writer}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <span className="fw-bold">DURATION : </span>
+                {movie.Runtime}
+              </ListGroup.Item>
+              <ListGroup.Item>{movie.Year}</ListGroup.Item>
+              <ListGroup.Item>
+                <span className="fw-bold">GENRE : </span>
+                {movie.Genre}
+              </ListGroup.Item>
+            </ListGroup>
+            <Card.Body>
+              <Card.Link variant="success">Guarda</Card.Link>
+              <Card.Link variant="info">Compra</Card.Link>
+            </Card.Body>
+          </Card>
+          <img src={movie.Poster} alt={movie.Title} />
+          <CommentZone asinId={params.id} />
         </Container>
       )}
     </>

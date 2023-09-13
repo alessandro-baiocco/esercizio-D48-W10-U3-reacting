@@ -51,7 +51,7 @@ const MyCarousel = (props) => {
             {data &&
               data.slice(0, 6).map((film, index) => (
                 <Col xs={6} md={4} lg={2} key={`film-${index}`} style={{ position: "relative" }}>
-                  <img src={film.Poster} alt={film.Title} height={"200px"} width={"100%"} />
+                  <img src={film.Poster} alt={film.Title} height={"350px"} width={"100%"} />
                   <Link to={`/MovieDetails/${film.imdbID}`}>
                     <button className="text-light" style={{ position: "absolute", left: "3px", bottom: "2px" }}>
                       guarda
@@ -66,7 +66,7 @@ const MyCarousel = (props) => {
             {data &&
               data.slice(4, 11).map((film, index) => (
                 <Col xs={6} md={4} lg={2} key={`film2-${index + 6}`} style={{ position: "relative" }}>
-                  <img src={film.Poster} alt={film.Title} height={"200px"} width={"100%"} />
+                  <img src={film.Poster} alt={film.Title} height={"350px"} width={"100%"} />
                   <Link to={`/MovieDetails/${film.imdbID}`}>
                     <button className="text-light" style={{ position: "absolute", left: "3px", bottom: "2px" }}>
                       guarda
