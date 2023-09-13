@@ -45,8 +45,9 @@ const FormComment = (props) => {
           onChange={(event) => {
             setCommentProp({ ...commentProp, comment: event.target.value, elementId: props.id });
           }}
-          className="p-0 text-light fw-bold d-block"
+          className="p-2 text-light fw-bold me-2"
           style={{ backgroundColor: "#6c757d33", border: "white 2px solid" }}
+          placeholder=" commenta"
         />
         <input
           type="number"
@@ -56,13 +57,13 @@ const FormComment = (props) => {
           onChange={(event) => {
             setCommentProp({ ...commentProp, rate: event.target.value });
           }}
-          className="p-0 text-light fw-bold"
+          className="p-2 text-light fw-bold"
           style={{ backgroundColor: "#6c757d33", border: "white 2px solid", maxWidth: "120px" }}
         />
         <button
           type="submit"
           onClick={(Event) => invia(Event)}
-          className="p-0 text-light fw-bold btn p-2"
+          className="p-0 text-light fw-bold btn p-2 ms-1 mb-1"
           style={{ backgroundColor: "#6c757d33", border: "white 2px solid", maxWidth: "120px" }}
         >
           invia
