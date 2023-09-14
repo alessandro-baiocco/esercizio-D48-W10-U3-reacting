@@ -4,7 +4,6 @@ import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 import logo from "./Netflix-assets/assets/netflix_logo.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 const MyTopBar = () => {
   const location = useLocation();

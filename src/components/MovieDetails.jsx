@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Alert, Card, Col, Container, ListGroup, Row, Spinner } from "react-bootstrap";
+import { Alert, Card, Container, ListGroup, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import CommentZone from "./CommentZone";
-import FormComment from "./FormComment";
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
